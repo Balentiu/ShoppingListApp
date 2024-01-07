@@ -5,6 +5,9 @@ plugins {
     // Add the Google services Gradle plugin
     id("com.google.gms.google-services")
 
+    // Add secrets-gradle-plugin here
+
+
 
 }
 
@@ -28,10 +31,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -91,5 +91,10 @@ dependencies {
     implementation ("com.google.android.material:material:1.12.0-alpha02")
     implementation("androidx.profileinstaller:profileinstaller:1.3.1")
 
+    //Google Maps
+    implementation ("com.google.maps.android:android-maps-utils:3.8.0")
+    implementation ("com.google.maps.android:maps-utils-ktx:5.0.0")
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
 
 }

@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.shoppinglistapp">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +17,10 @@
         android:theme="@style/Theme.ShoppingListApp"
         tools:targetApi="31">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAVc_Xkna1Qct6foJy5dNbNwfkF3Ql9pAA" />
+
         <activity
             android:name=".SignInActivity"
             android:exported="true"
@@ -23,20 +30,24 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
         </activity>
+
         <activity
             android:name=".MapActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
-
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAVc_Xkna1Qct6foJy5dNbNwfkF3Ql9pAA" />
     </application>
 
 </manifest>
