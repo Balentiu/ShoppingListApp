@@ -37,21 +37,25 @@
             android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add"/>
+            android:text="@string/add"
+            android:backgroundTint="@color/yellow"/>
+
 
         <Button
             android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/delete"
-            android:layout_marginStart="30dp"/>
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/yellow"/>
 
         <Button
             android:id="@+id/clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/clear"
-            android:layout_marginStart="30dp"/>
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/yellow"/>
 
     </LinearLayout>
 
@@ -73,5 +77,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView1"
         android:choiceMode="multipleChoice"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/yellow"
+        android:elevation="5dp"
+        android:src="@drawable/ic_baseline_maps"
+        app:tint="@color/black" />
+
 
 </RelativeLayout>
