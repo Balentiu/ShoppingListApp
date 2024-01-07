@@ -4,6 +4,8 @@ plugins {
 
     // Add the Google services Gradle plugin
     id("com.google.gms.google-services")
+
+
 }
 
 android {
@@ -51,6 +53,8 @@ android {
         }
     }
     buildFeatures{
+        //noinspection DataBindingWithoutKapt
+        dataBinding = true
         viewBinding = true
     }
 }
@@ -86,5 +90,6 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha13")
     implementation ("com.google.android.material:material:1.12.0-alpha02")
     implementation("androidx.profileinstaller:profileinstaller:1.3.1")
+
 
 }
