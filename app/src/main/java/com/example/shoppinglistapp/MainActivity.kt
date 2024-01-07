@@ -1,5 +1,6 @@
 package com.example.shoppinglistapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.SparseBooleanArray
 import android.widget.ArrayAdapter
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
 
         val itemlist = arrayListOf<String>()
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, itemlist)
+
+        binding.goMap.setOnClickListener{
+            val intent = Intent(this, MapActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.add.setOnClickListener {
             itemlist.add(binding.editText.text.toString())
