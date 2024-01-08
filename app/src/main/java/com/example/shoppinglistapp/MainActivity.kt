@@ -11,23 +11,25 @@ import com.example.shoppinglistapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var itemlist: ArrayList<String>
+    private lateinit var adapter: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val itemlist = arrayListOf<String>()
-        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, itemlist)
+        itemlist = arrayListOf()
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_multiple_choice, itemlist)
+        binding.listView.adapter = adapter
 
-        binding.goMap.setOnClickListener{
+        binding.goMap.setOnClickListener {
             val intent = Intent(this, MapActivity::class.java)
             startActivity(intent)
         }
 
         binding.add.setOnClickListener {
             itemlist.add(binding.editText.text.toString())
-            binding.listView.adapter = adapter
             adapter.notifyDataSetChanged()
             binding.editText.text.clear()
         }
@@ -38,7 +40,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.listView.setOnItemClickListener { _, _, i, _ ->
-            android.widget.Toast.makeText(this, "You Selected the item --> " + itemlist[i], android.widget.Toast.LENGTH_SHORT).show()
+            android.widget.Toast.makeText(
+                this,
+                "You Selected the item --> " + itemlist[i],
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
         }
 
         binding.delete.setOnClickListener {
@@ -47,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             var item = count - 1
             while (item >= 0) {
                 if (position.get(item)) {
-                    adapter.remove(itemlist[item])
+                    itemlist.removeAt(item)
                 }
                 item--
             }

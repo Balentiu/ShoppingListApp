@@ -1,18 +1,11 @@
 package com.example.shoppinglistapp
 
-import android.Manifest
 import android.content.pm.PackageManager
-import android.location.Geocoder
 import android.location.Location
 import android.os.Bundle
-import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
-import androidx.constraintlayout.motion.widget.Debug.getLocation
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.FragmentActivity
-import com.example.shoppinglistapp.databinding.ActivityMainBinding
 import com.example.shoppinglistapp.databinding.ActivityMapBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -20,12 +13,9 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import java.io.IOException
-import java.util.Locale
+
 
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {

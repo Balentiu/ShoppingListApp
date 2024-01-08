@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/shopping_list"
@@ -17,16 +17,17 @@
         android:textSize="26sp"/>
 
     <EditText
-        android:layout_below="@id/textView"
         android:id="@+id/editText"
+        android:layout_below="@id/textView"
         android:padding="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:hint="@string/add_an_item"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:autofillHints="Add item"
         android:inputType="text" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,29 +36,31 @@
         android:layout_below="@id/editText"
         android:padding="10dp">
 
-        <Button
-            android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:backgroundTint="@color/yellow"/>
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:backgroundTint="@color/yellow"
+        style="?android:attr/buttonBarButtonStyle" />
 
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:layout_marginStart="30dp"
+        android:backgroundTint="@color/yellow"
+        style="?android:attr/buttonBarButtonStyle" />
 
-        <Button
-            android:id="@+id/delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/delete"
-            android:layout_marginStart="30dp"
-            android:backgroundTint="@color/yellow"/>
-
-        <Button
-            android:id="@+id/clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clear"
-            android:layout_marginStart="30dp"
-            android:backgroundTint="@color/yellow"/>
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:layout_marginStart="30dp"
+        android:backgroundTint="@color/yellow"
+        style="?android:attr/buttonBarButtonStyle" />
 
     </LinearLayout>
 
@@ -76,7 +79,7 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/textView1"
         android:choiceMode="multipleChoice"/>
 
